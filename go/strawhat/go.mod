@@ -1,4 +1,4 @@
-module github.com/DoubleCircle-Salt/strawhat/go/strawhat
+module github.com/OptimusAn/strawhat/go/strawhat
 
 go 1.16
 

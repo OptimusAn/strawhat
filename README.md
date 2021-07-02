@@ -14,7 +14,7 @@ tcp tunnel protocol
 package main
 
 import (
-	"github.com/DoubleCircle-Salt/strawhat/go/strawhat"
+	"github.com/OptimusAn/strawhat/go/strawhat"
 	"github.com/golang/protobuf/proto"
 )
 
