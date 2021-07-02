@@ -17,7 +17,8 @@ goog.provide('proto.strawhat.Protocol');
  * @enum {number}
  */
 proto.strawhat.Protocol = {
-  TCP: 0,
-  UDP: 1
+  EMPTY: 0,
+  TCP: 1,
+  UDP: 3
 };
 

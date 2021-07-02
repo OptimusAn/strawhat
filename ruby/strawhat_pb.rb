@@ -10,8 +10,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :protocol, :enum, 2, "strawhat.Protocol"
     end
     add_enum "strawhat.Protocol" do
-      value :Tcp, 0
-      value :Udp, 1
+      value :Empty, 0
+      value :Tcp, 1
+      value :Udp, 3
     end
   end
 end

@@ -66,13 +66,14 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace strawhat {
 
 enum Protocol : int {
-  Tcp = 0,
-  Udp = 1,
+  Empty = 0,
+  Tcp = 1,
+  Udp = 3,
   Protocol_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   Protocol_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool Protocol_IsValid(int value);
-constexpr Protocol Protocol_MIN = Tcp;
+constexpr Protocol Protocol_MIN = Empty;
 constexpr Protocol Protocol_MAX = Udp;
 constexpr int Protocol_ARRAYSIZE = Protocol_MAX + 1;
 

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\n./strawhat',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0estrawhat.proto\x12\x08strawhat\"C\n\x08Strawhat\x12\x11\n\tserviceID\x18\x01 \x01(\t\x12$\n\x08protocol\x18\x02 \x01(\x0e\x32\x12.strawhat.Protocol*\x1c\n\x08Protocol\x12\x07\n\x03Tcp\x10\x00\x12\x07\n\x03Udp\x10\x01\x42\x0cZ\n./strawhatb\x06proto3'
+  serialized_pb=b'\n\x0estrawhat.proto\x12\x08strawhat\"C\n\x08Strawhat\x12\x11\n\tserviceID\x18\x01 \x01(\t\x12$\n\x08protocol\x18\x02 \x01(\x0e\x32\x12.strawhat.Protocol*\'\n\x08Protocol\x12\t\n\x05\x45mpty\x10\x00\x12\x07\n\x03Tcp\x10\x01\x12\x07\n\x03Udp\x10\x03\x42\x0cZ\n./strawhatb\x06proto3'
 )
 
 _PROTOCOL = _descriptor.EnumDescriptor(
@@ -31,12 +31,17 @@ _PROTOCOL = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='Tcp', index=0, number=0,
+      name='Empty', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='Udp', index=1, number=1,
+      name='Tcp', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Udp', index=2, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -44,13 +49,14 @@ _PROTOCOL = _descriptor.EnumDescriptor(
   containing_type=None,
   serialized_options=None,
   serialized_start=97,
-  serialized_end=125,
+  serialized_end=136,
 )
 _sym_db.RegisterEnumDescriptor(_PROTOCOL)
 
 Protocol = enum_type_wrapper.EnumTypeWrapper(_PROTOCOL)
-Tcp = 0
-Udp = 1
+Empty = 0
+Tcp = 1
+Udp = 3
 
 
 

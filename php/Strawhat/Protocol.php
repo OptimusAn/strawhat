@@ -12,15 +12,20 @@ use UnexpectedValueException;
 class Protocol
 {
     /**
-     * Generated from protobuf enum <code>Tcp = 0;</code>
+     * Generated from protobuf enum <code>Empty = 0;</code>
      */
-    const Tcp = 0;
+    const PBEmpty = 0;
     /**
-     * Generated from protobuf enum <code>Udp = 1;</code>
+     * Generated from protobuf enum <code>Tcp = 1;</code>
      */
-    const Udp = 1;
+    const Tcp = 1;
+    /**
+     * Generated from protobuf enum <code>Udp = 3;</code>
+     */
+    const Udp = 3;
 
     private static $valueToName = [
+        self::PBEmpty => 'PBEmpty',
         self::Tcp => 'Tcp',
         self::Udp => 'Udp',
     ];

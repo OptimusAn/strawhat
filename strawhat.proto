@@ -45,8 +45,9 @@ package strawhat;
 option go_package = "./strawhat";
 
 enum Protocol {
-	Tcp = 0;
-	Udp = 1;
+	Empty = 0;
+	Tcp   = 1;
+	Udp   = 3;
 }
 
 message Strawhat {

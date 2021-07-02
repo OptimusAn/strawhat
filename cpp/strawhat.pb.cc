@@ -56,12 +56,12 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_strawhat_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\016strawhat.proto\022\010strawhat\"C\n\010Strawhat\022\021"
   "\n\tserviceID\030\001 \001(\t\022$\n\010protocol\030\002 \001(\0162\022.st"
-  "rawhat.Protocol*\034\n\010Protocol\022\007\n\003Tcp\020\000\022\007\n\003"
-  "Udp\020\001B\014Z\n./strawhatb\006proto3"
+  "rawhat.Protocol*\'\n\010Protocol\022\t\n\005Empty\020\000\022\007"
+  "\n\003Tcp\020\001\022\007\n\003Udp\020\003B\014Z\n./strawhatb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_strawhat_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_strawhat_2eproto = {
-  false, false, 147, descriptor_table_protodef_strawhat_2eproto, "strawhat.proto", 
+  false, false, 158, descriptor_table_protodef_strawhat_2eproto, "strawhat.proto", 
   &descriptor_table_strawhat_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_strawhat_2eproto::offsets,
   file_level_metadata_strawhat_2eproto, file_level_enum_descriptors_strawhat_2eproto, file_level_service_descriptors_strawhat_2eproto,
@@ -83,6 +83,7 @@ bool Protocol_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+    case 3:
       return true;
     default:
       return false;

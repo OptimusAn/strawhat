@@ -20,24 +20,32 @@ public final class StrawhatOuterClass {
   public enum Protocol
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>Tcp = 0;</code>
+     * <code>Empty = 0;</code>
      */
-    Tcp(0),
+    Empty(0),
     /**
-     * <code>Udp = 1;</code>
+     * <code>Tcp = 1;</code>
      */
-    Udp(1),
+    Tcp(1),
+    /**
+     * <code>Udp = 3;</code>
+     */
+    Udp(3),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>Tcp = 0;</code>
+     * <code>Empty = 0;</code>
      */
-    public static final int Tcp_VALUE = 0;
+    public static final int Empty_VALUE = 0;
     /**
-     * <code>Udp = 1;</code>
+     * <code>Tcp = 1;</code>
      */
-    public static final int Udp_VALUE = 1;
+    public static final int Tcp_VALUE = 1;
+    /**
+     * <code>Udp = 3;</code>
+     */
+    public static final int Udp_VALUE = 3;
 
 
     public final int getNumber() {
@@ -64,8 +72,9 @@ public final class StrawhatOuterClass {
      */
     public static Protocol forNumber(int value) {
       switch (value) {
-        case 0: return Tcp;
-        case 1: return Udp;
+        case 0: return Empty;
+        case 1: return Tcp;
+        case 3: return Udp;
         default: return null;
       }
     }
@@ -314,7 +323,7 @@ public final class StrawhatOuterClass {
       if (!getServiceIDBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceID_);
       }
-      if (protocol_ != strawhat.StrawhatOuterClass.Protocol.Tcp.getNumber()) {
+      if (protocol_ != strawhat.StrawhatOuterClass.Protocol.Empty.getNumber()) {
         output.writeEnum(2, protocol_);
       }
       unknownFields.writeTo(output);
@@ -329,7 +338,7 @@ public final class StrawhatOuterClass {
       if (!getServiceIDBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceID_);
       }
-      if (protocol_ != strawhat.StrawhatOuterClass.Protocol.Tcp.getNumber()) {
+      if (protocol_ != strawhat.StrawhatOuterClass.Protocol.Empty.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, protocol_);
       }
@@ -813,8 +822,8 @@ public final class StrawhatOuterClass {
     java.lang.String[] descriptorData = {
       "\n\016strawhat.proto\022\010strawhat\"C\n\010Strawhat\022\021" +
       "\n\tserviceID\030\001 \001(\t\022$\n\010protocol\030\002 \001(\0162\022.st" +
-      "rawhat.Protocol*\034\n\010Protocol\022\007\n\003Tcp\020\000\022\007\n\003" +
-      "Udp\020\001B\014Z\n./strawhatb\006proto3"
+      "rawhat.Protocol*\'\n\010Protocol\022\t\n\005Empty\020\000\022\007" +
+      "\n\003Tcp\020\001\022\007\n\003Udp\020\003B\014Z\n./strawhatb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -50,12 +50,13 @@ GPBEnumDescriptor *Protocol_Enum_EnumDescriptor(void) {
   static _Atomic(GPBEnumDescriptor*) descriptor = nil;
   if (!descriptor) {
     static const char *valueNames =
-        "Tcp\000Udp\000";
+        "Empty\000Tcp\000Udp\000";
     static const int32_t values[] = {
+        Protocol_Enum_Empty,
         Protocol_Enum_Tcp,
         Protocol_Enum_Udp,
     };
-    static const char *extraTextFormatInfo = "\002\000\003\000\001\003\000";
+    static const char *extraTextFormatInfo = "\003\000\005\000\001\003\000\002\003\000";
     GPBEnumDescriptor *worker =
         [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(Protocol_Enum)
                                        valueNames:valueNames
@@ -73,6 +74,7 @@ GPBEnumDescriptor *Protocol_Enum_EnumDescriptor(void) {
 
 BOOL Protocol_Enum_IsValidValue(int32_t value__) {
   switch (value__) {
+    case Protocol_Enum_Empty:
     case Protocol_Enum_Tcp:
     case Protocol_Enum_Udp:
       return YES;

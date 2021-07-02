@@ -38,8 +38,9 @@ typedef GPB_ENUM(Protocol_Enum) {
    * of the field.
    **/
   Protocol_Enum_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  Protocol_Enum_Tcp = 0,
-  Protocol_Enum_Udp = 1,
+  Protocol_Enum_Empty = 0,
+  Protocol_Enum_Tcp = 1,
+  Protocol_Enum_Udp = 3,
 };
 
 GPBEnumDescriptor *Protocol_Enum_EnumDescriptor(void);
