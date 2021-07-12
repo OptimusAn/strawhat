@@ -6,7 +6,7 @@ tcp tunnel protocol
 | 序号 | 名称   | 类型  | 说明  |
 |  ----  |  ----  | ----  | ----  |
 | 1 | ServiceID | string | serviceID |
-| 2 | Protocol  | enum | Tcp:0/Udp:1 |
+| 2 | Transport | enum | Tcp:0/Udp:1 |
 
 # go-code instruction
 
@@ -21,7 +21,7 @@ import (
 func main() {
 	f := &strawhat.Strawhat{
 		ServiceID: "baidu.com",
-		Protocol:  strawhat.Protocol_Tcp,
+		Transport: strawhat.Transport_Tcp,
 	}
 	data, err := proto.Marshal(f)
 	if err != nil {
