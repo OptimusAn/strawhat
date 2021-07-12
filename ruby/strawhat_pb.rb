@@ -7,9 +7,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("strawhat.proto", :syntax => :proto3) do
     add_message "strawhat.Strawhat" do
       optional :serviceID, :string, 1
-      optional :protocol, :enum, 2, "strawhat.Protocol"
+      optional :transport, :enum, 2, "strawhat.Transport"
     end
-    add_enum "strawhat.Protocol" do
+    add_enum "strawhat.Transport" do
       value :Empty, 0
       value :Tcp, 1
       value :Udp, 3
@@ -19,5 +19,5 @@ end
 
 module Strawhat
   Strawhat = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("strawhat.Strawhat").msgclass
-  Protocol = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("strawhat.Protocol").enummodule
+  Transport = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("strawhat.Transport").enummodule
 end

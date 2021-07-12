@@ -24,21 +24,21 @@ namespace Strawhat {
     static StrawhatReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5zdHJhd2hhdC5wcm90bxIIc3RyYXdoYXQiQwoIU3RyYXdoYXQSEQoJc2Vy",
-            "dmljZUlEGAEgASgJEiQKCHByb3RvY29sGAIgASgOMhIuc3RyYXdoYXQuUHJv",
-            "dG9jb2wqJwoIUHJvdG9jb2wSCQoFRW1wdHkQABIHCgNUY3AQARIHCgNVZHAQ",
-            "A0IMWgouL3N0cmF3aGF0YgZwcm90bzM="));
+            "Cg5zdHJhd2hhdC5wcm90bxIIc3RyYXdoYXQiRQoIU3RyYXdoYXQSEQoJc2Vy",
+            "dmljZUlEGAEgASgJEiYKCXRyYW5zcG9ydBgCIAEoDjITLnN0cmF3aGF0LlRy",
+            "YW5zcG9ydCooCglUcmFuc3BvcnQSCQoFRW1wdHkQABIHCgNUY3AQARIHCgNV",
+            "ZHAQA0IMWgouL3N0cmF3aGF0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Strawhat.Protocol), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Strawhat.Strawhat), global::Strawhat.Strawhat.Parser, new[]{ "ServiceID", "Protocol" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Strawhat.Transport), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Strawhat.Strawhat), global::Strawhat.Strawhat.Parser, new[]{ "ServiceID", "Transport" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Enums
-  public enum Protocol {
+  public enum Transport {
     [pbr::OriginalName("Empty")] Empty = 0,
     [pbr::OriginalName("Tcp")] Tcp = 1,
     [pbr::OriginalName("Udp")] Udp = 3,
@@ -77,7 +77,7 @@ namespace Strawhat {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Strawhat(Strawhat other) : this() {
       serviceID_ = other.serviceID_;
-      protocol_ = other.protocol_;
+      transport_ = other.transport_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,14 +97,14 @@ namespace Strawhat {
       }
     }
 
-    /// <summary>Field number for the "protocol" field.</summary>
-    public const int ProtocolFieldNumber = 2;
-    private global::Strawhat.Protocol protocol_ = global::Strawhat.Protocol.Empty;
+    /// <summary>Field number for the "transport" field.</summary>
+    public const int TransportFieldNumber = 2;
+    private global::Strawhat.Transport transport_ = global::Strawhat.Transport.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Strawhat.Protocol Protocol {
-      get { return protocol_; }
+    public global::Strawhat.Transport Transport {
+      get { return transport_; }
       set {
-        protocol_ = value;
+        transport_ = value;
       }
     }
 
@@ -122,7 +122,7 @@ namespace Strawhat {
         return true;
       }
       if (ServiceID != other.ServiceID) return false;
-      if (Protocol != other.Protocol) return false;
+      if (Transport != other.Transport) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,7 +130,7 @@ namespace Strawhat {
     public override int GetHashCode() {
       int hash = 1;
       if (ServiceID.Length != 0) hash ^= ServiceID.GetHashCode();
-      if (Protocol != global::Strawhat.Protocol.Empty) hash ^= Protocol.GetHashCode();
+      if (Transport != global::Strawhat.Transport.Empty) hash ^= Transport.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,9 +151,9 @@ namespace Strawhat {
         output.WriteRawTag(10);
         output.WriteString(ServiceID);
       }
-      if (Protocol != global::Strawhat.Protocol.Empty) {
+      if (Transport != global::Strawhat.Transport.Empty) {
         output.WriteRawTag(16);
-        output.WriteEnum((int) Protocol);
+        output.WriteEnum((int) Transport);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,9 +168,9 @@ namespace Strawhat {
         output.WriteRawTag(10);
         output.WriteString(ServiceID);
       }
-      if (Protocol != global::Strawhat.Protocol.Empty) {
+      if (Transport != global::Strawhat.Transport.Empty) {
         output.WriteRawTag(16);
-        output.WriteEnum((int) Protocol);
+        output.WriteEnum((int) Transport);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -184,8 +184,8 @@ namespace Strawhat {
       if (ServiceID.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ServiceID);
       }
-      if (Protocol != global::Strawhat.Protocol.Empty) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Protocol);
+      if (Transport != global::Strawhat.Transport.Empty) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Transport);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -201,8 +201,8 @@ namespace Strawhat {
       if (other.ServiceID.Length != 0) {
         ServiceID = other.ServiceID;
       }
-      if (other.Protocol != global::Strawhat.Protocol.Empty) {
-        Protocol = other.Protocol;
+      if (other.Transport != global::Strawhat.Transport.Empty) {
+        Transport = other.Transport;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -223,7 +223,7 @@ namespace Strawhat {
             break;
           }
           case 16: {
-            Protocol = (global::Strawhat.Protocol) input.ReadEnum();
+            Transport = (global::Strawhat.Transport) input.ReadEnum();
             break;
           }
         }
@@ -245,7 +245,7 @@ namespace Strawhat {
             break;
           }
           case 16: {
-            Protocol = (global::Strawhat.Protocol) input.ReadEnum();
+            Transport = (global::Strawhat.Transport) input.ReadEnum();
             break;
           }
         }

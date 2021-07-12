@@ -44,25 +44,25 @@ static GPBFileDescriptor *StrawhatRoot_FileDescriptor(void) {
   return descriptor;
 }
 
-#pragma mark - Enum Protocol_Enum
+#pragma mark - Enum Transport
 
-GPBEnumDescriptor *Protocol_Enum_EnumDescriptor(void) {
+GPBEnumDescriptor *Transport_EnumDescriptor(void) {
   static _Atomic(GPBEnumDescriptor*) descriptor = nil;
   if (!descriptor) {
     static const char *valueNames =
         "Empty\000Tcp\000Udp\000";
     static const int32_t values[] = {
-        Protocol_Enum_Empty,
-        Protocol_Enum_Tcp,
-        Protocol_Enum_Udp,
+        Transport_Empty,
+        Transport_Tcp,
+        Transport_Udp,
     };
     static const char *extraTextFormatInfo = "\003\000\005\000\001\003\000\002\003\000";
     GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(Protocol_Enum)
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(Transport)
                                        valueNames:valueNames
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:Protocol_Enum_IsValidValue
+                                     enumVerifier:Transport_IsValidValue
                               extraTextFormatInfo:extraTextFormatInfo];
     GPBEnumDescriptor *expected = nil;
     if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
@@ -72,11 +72,11 @@ GPBEnumDescriptor *Protocol_Enum_EnumDescriptor(void) {
   return descriptor;
 }
 
-BOOL Protocol_Enum_IsValidValue(int32_t value__) {
+BOOL Transport_IsValidValue(int32_t value__) {
   switch (value__) {
-    case Protocol_Enum_Empty:
-    case Protocol_Enum_Tcp:
-    case Protocol_Enum_Udp:
+    case Transport_Empty:
+    case Transport_Tcp:
+    case Transport_Udp:
       return YES;
     default:
       return NO;
@@ -88,11 +88,11 @@ BOOL Protocol_Enum_IsValidValue(int32_t value__) {
 @implementation Strawhat
 
 @dynamic serviceId;
-@dynamic protocol;
+@dynamic transport;
 
 typedef struct Strawhat__storage_ {
   uint32_t _has_storage_[1];
-  Protocol_Enum protocol;
+  Transport transport;
   NSString *serviceId;
 } Strawhat__storage_;
 
@@ -112,11 +112,11 @@ typedef struct Strawhat__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "protocol",
-        .dataTypeSpecific.enumDescFunc = Protocol_Enum_EnumDescriptor,
-        .number = Strawhat_FieldNumber_Protocol,
+        .name = "transport",
+        .dataTypeSpecific.enumDescFunc = Transport_EnumDescriptor,
+        .number = Strawhat_FieldNumber_Transport,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Strawhat__storage_, protocol),
+        .offset = (uint32_t)offsetof(Strawhat__storage_, transport),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeEnum,
       },
@@ -144,15 +144,15 @@ typedef struct Strawhat__storage_ {
 
 @end
 
-int32_t Strawhat_Protocol_RawValue(Strawhat *message) {
+int32_t Strawhat_Transport_RawValue(Strawhat *message) {
   GPBDescriptor *descriptor = [Strawhat descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Strawhat_FieldNumber_Protocol];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Strawhat_FieldNumber_Transport];
   return GPBGetMessageRawEnumField(message, field);
 }
 
-void SetStrawhat_Protocol_RawValue(Strawhat *message, int32_t value) {
+void SetStrawhat_Transport_RawValue(Strawhat *message, int32_t value) {
   GPBDescriptor *descriptor = [Strawhat descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Strawhat_FieldNumber_Protocol];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Strawhat_FieldNumber_Transport];
   GPBSetMessageRawEnumField(message, field, value);
 }
 

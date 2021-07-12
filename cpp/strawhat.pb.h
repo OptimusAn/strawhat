@@ -65,31 +65,31 @@ template<> ::strawhat::Strawhat* Arena::CreateMaybeMessage<::strawhat::Strawhat>
 PROTOBUF_NAMESPACE_CLOSE
 namespace strawhat {
 
-enum Protocol : int {
+enum Transport : int {
   Empty = 0,
   Tcp = 1,
   Udp = 3,
-  Protocol_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  Protocol_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+  Transport_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  Transport_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool Protocol_IsValid(int value);
-constexpr Protocol Protocol_MIN = Empty;
-constexpr Protocol Protocol_MAX = Udp;
-constexpr int Protocol_ARRAYSIZE = Protocol_MAX + 1;
+bool Transport_IsValid(int value);
+constexpr Transport Transport_MIN = Empty;
+constexpr Transport Transport_MAX = Udp;
+constexpr int Transport_ARRAYSIZE = Transport_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Protocol_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Transport_descriptor();
 template<typename T>
-inline const std::string& Protocol_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, Protocol>::value ||
+inline const std::string& Transport_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Transport>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function Protocol_Name.");
+    "Incorrect type passed to function Transport_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    Protocol_descriptor(), enum_t_value);
+    Transport_descriptor(), enum_t_value);
 }
-inline bool Protocol_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Protocol* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Protocol>(
-    Protocol_descriptor(), name, value);
+inline bool Transport_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Transport* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Transport>(
+    Transport_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -207,7 +207,7 @@ class Strawhat PROTOBUF_FINAL :
 
   enum : int {
     kServiceIDFieldNumber = 1,
-    kProtocolFieldNumber = 2,
+    kTransportFieldNumber = 2,
   };
   // string serviceID = 1;
   void clear_serviceid();
@@ -225,13 +225,13 @@ class Strawhat PROTOBUF_FINAL :
   std::string* _internal_mutable_serviceid();
   public:
 
-  // .strawhat.Protocol protocol = 2;
-  void clear_protocol();
-  ::strawhat::Protocol protocol() const;
-  void set_protocol(::strawhat::Protocol value);
+  // .strawhat.Transport transport = 2;
+  void clear_transport();
+  ::strawhat::Transport transport() const;
+  void set_transport(::strawhat::Transport value);
   private:
-  ::strawhat::Protocol _internal_protocol() const;
-  void _internal_set_protocol(::strawhat::Protocol value);
+  ::strawhat::Transport _internal_transport() const;
+  void _internal_set_transport(::strawhat::Transport value);
   public:
 
   // @@protoc_insertion_point(class_scope:strawhat.Strawhat)
@@ -242,7 +242,7 @@ class Strawhat PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serviceid_;
-  int protocol_;
+  int transport_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_strawhat_2eproto;
 };
@@ -318,24 +318,24 @@ inline void Strawhat::set_allocated_serviceid(std::string* serviceid) {
   // @@protoc_insertion_point(field_set_allocated:strawhat.Strawhat.serviceID)
 }
 
-// .strawhat.Protocol protocol = 2;
-inline void Strawhat::clear_protocol() {
-  protocol_ = 0;
+// .strawhat.Transport transport = 2;
+inline void Strawhat::clear_transport() {
+  transport_ = 0;
 }
-inline ::strawhat::Protocol Strawhat::_internal_protocol() const {
-  return static_cast< ::strawhat::Protocol >(protocol_);
+inline ::strawhat::Transport Strawhat::_internal_transport() const {
+  return static_cast< ::strawhat::Transport >(transport_);
 }
-inline ::strawhat::Protocol Strawhat::protocol() const {
-  // @@protoc_insertion_point(field_get:strawhat.Strawhat.protocol)
-  return _internal_protocol();
+inline ::strawhat::Transport Strawhat::transport() const {
+  // @@protoc_insertion_point(field_get:strawhat.Strawhat.transport)
+  return _internal_transport();
 }
-inline void Strawhat::_internal_set_protocol(::strawhat::Protocol value) {
+inline void Strawhat::_internal_set_transport(::strawhat::Transport value) {
   
-  protocol_ = value;
+  transport_ = value;
 }
-inline void Strawhat::set_protocol(::strawhat::Protocol value) {
-  _internal_set_protocol(value);
-  // @@protoc_insertion_point(field_set:strawhat.Strawhat.protocol)
+inline void Strawhat::set_transport(::strawhat::Transport value) {
+  _internal_set_transport(value);
+  // @@protoc_insertion_point(field_set:strawhat.Strawhat.transport)
 }
 
 #ifdef __GNUC__
@@ -348,10 +348,10 @@ inline void Strawhat::set_protocol(::strawhat::Protocol value) {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::strawhat::Protocol> : ::std::true_type {};
+template <> struct is_proto_enum< ::strawhat::Transport> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::strawhat::Protocol>() {
-  return ::strawhat::Protocol_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::strawhat::Transport>() {
+  return ::strawhat::Transport_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

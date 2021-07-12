@@ -29,27 +29,27 @@ CF_EXTERN_C_BEGIN
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - Enum Protocol_Enum
+#pragma mark - Enum Transport
 
-typedef GPB_ENUM(Protocol_Enum) {
+typedef GPB_ENUM(Transport) {
   /**
    * Value used if any message's field encounters a value that is not defined
    * by this enum. The message will also have C functions to get/set the rawValue
    * of the field.
    **/
-  Protocol_Enum_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  Protocol_Enum_Empty = 0,
-  Protocol_Enum_Tcp = 1,
-  Protocol_Enum_Udp = 3,
+  Transport_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  Transport_Empty = 0,
+  Transport_Tcp = 1,
+  Transport_Udp = 3,
 };
 
-GPBEnumDescriptor *Protocol_Enum_EnumDescriptor(void);
+GPBEnumDescriptor *Transport_EnumDescriptor(void);
 
 /**
  * Checks to see if the given value is defined by the enum or was not known at
  * the time this source was generated.
  **/
-BOOL Protocol_Enum_IsValidValue(int32_t value);
+BOOL Transport_IsValidValue(int32_t value);
 
 #pragma mark - StrawhatRoot
 
@@ -70,28 +70,28 @@ GPB_FINAL @interface StrawhatRoot : GPBRootObject
 
 typedef GPB_ENUM(Strawhat_FieldNumber) {
   Strawhat_FieldNumber_ServiceId = 1,
-  Strawhat_FieldNumber_Protocol = 2,
+  Strawhat_FieldNumber_Transport = 2,
 };
 
 GPB_FINAL @interface Strawhat : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *serviceId;
 
-@property(nonatomic, readwrite) Protocol_Enum protocol;
+@property(nonatomic, readwrite) Transport transport;
 
 @end
 
 /**
- * Fetches the raw value of a @c Strawhat's @c protocol property, even
+ * Fetches the raw value of a @c Strawhat's @c transport property, even
  * if the value was not defined by the enum at the time the code was generated.
  **/
-int32_t Strawhat_Protocol_RawValue(Strawhat *message);
+int32_t Strawhat_Transport_RawValue(Strawhat *message);
 /**
- * Sets the raw value of an @c Strawhat's @c protocol property, allowing
+ * Sets the raw value of an @c Strawhat's @c transport property, allowing
  * it to be set to a value that was not defined by the enum at the time the code
  * was generated.
  **/
-void SetStrawhat_Protocol_RawValue(Strawhat *message, int32_t value);
+void SetStrawhat_Transport_RawValue(Strawhat *message, int32_t value);
 
 NS_ASSUME_NONNULL_END
 

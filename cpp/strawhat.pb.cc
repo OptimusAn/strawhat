@@ -20,7 +20,7 @@ namespace strawhat {
 constexpr Strawhat::Strawhat(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : serviceid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , protocol_(0)
+  , transport_(0)
 {}
 struct StrawhatDefaultTypeInternal {
   constexpr StrawhatDefaultTypeInternal()
@@ -43,7 +43,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_strawhat_2eproto::offsets[] PR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::strawhat::Strawhat, serviceid_),
-  PROTOBUF_FIELD_OFFSET(::strawhat::Strawhat, protocol_),
+  PROTOBUF_FIELD_OFFSET(::strawhat::Strawhat, transport_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::strawhat::Strawhat)},
@@ -54,14 +54,15 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_strawhat_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016strawhat.proto\022\010strawhat\"C\n\010Strawhat\022\021"
-  "\n\tserviceID\030\001 \001(\t\022$\n\010protocol\030\002 \001(\0162\022.st"
-  "rawhat.Protocol*\'\n\010Protocol\022\t\n\005Empty\020\000\022\007"
-  "\n\003Tcp\020\001\022\007\n\003Udp\020\003B\014Z\n./strawhatb\006proto3"
+  "\n\016strawhat.proto\022\010strawhat\"E\n\010Strawhat\022\021"
+  "\n\tserviceID\030\001 \001(\t\022&\n\ttransport\030\002 \001(\0162\023.s"
+  "trawhat.Transport*(\n\tTransport\022\t\n\005Empty\020"
+  "\000\022\007\n\003Tcp\020\001\022\007\n\003Udp\020\003B\014Z\n./strawhatb\006proto"
+  "3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_strawhat_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_strawhat_2eproto = {
-  false, false, 158, descriptor_table_protodef_strawhat_2eproto, "strawhat.proto", 
+  false, false, 161, descriptor_table_protodef_strawhat_2eproto, "strawhat.proto", 
   &descriptor_table_strawhat_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_strawhat_2eproto::offsets,
   file_level_metadata_strawhat_2eproto, file_level_enum_descriptors_strawhat_2eproto, file_level_service_descriptors_strawhat_2eproto,
@@ -75,11 +76,11 @@ descriptor_table_strawhat_2eproto_metadata_getter(int index) {
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_strawhat_2eproto(&descriptor_table_strawhat_2eproto);
 namespace strawhat {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Protocol_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Transport_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_strawhat_2eproto);
   return file_level_enum_descriptors_strawhat_2eproto[0];
 }
-bool Protocol_IsValid(int value) {
+bool Transport_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -111,13 +112,13 @@ Strawhat::Strawhat(const Strawhat& from)
     serviceid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_serviceid(), 
       GetArena());
   }
-  protocol_ = from.protocol_;
+  transport_ = from.transport_;
   // @@protoc_insertion_point(copy_constructor:strawhat.Strawhat)
 }
 
 void Strawhat::SharedCtor() {
 serviceid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-protocol_ = 0;
+transport_ = 0;
 }
 
 Strawhat::~Strawhat() {
@@ -148,7 +149,7 @@ void Strawhat::Clear() {
   (void) cached_has_bits;
 
   serviceid_.ClearToEmpty();
-  protocol_ = 0;
+  transport_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -168,12 +169,12 @@ const char* Strawhat::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .strawhat.Protocol protocol = 2;
+      // .strawhat.Transport transport = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_protocol(static_cast<::strawhat::Protocol>(val));
+          _internal_set_transport(static_cast<::strawhat::Transport>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -214,11 +215,11 @@ failure:
         1, this->_internal_serviceid(), target);
   }
 
-  // .strawhat.Protocol protocol = 2;
-  if (this->protocol() != 0) {
+  // .strawhat.Transport transport = 2;
+  if (this->transport() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_protocol(), target);
+      2, this->_internal_transport(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -244,10 +245,10 @@ size_t Strawhat::ByteSizeLong() const {
         this->_internal_serviceid());
   }
 
-  // .strawhat.Protocol protocol = 2;
-  if (this->protocol() != 0) {
+  // .strawhat.Transport transport = 2;
+  if (this->transport() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_protocol());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_transport());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -284,8 +285,8 @@ void Strawhat::MergeFrom(const Strawhat& from) {
   if (from.serviceid().size() > 0) {
     _internal_set_serviceid(from._internal_serviceid());
   }
-  if (from.protocol() != 0) {
-    _internal_set_protocol(from._internal_protocol());
+  if (from.transport() != 0) {
+    _internal_set_transport(from._internal_transport());
   }
 }
 
@@ -311,7 +312,7 @@ void Strawhat::InternalSwap(Strawhat* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   serviceid_.Swap(&other->serviceid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(protocol_, other->protocol_);
+  swap(transport_, other->transport_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Strawhat::GetMetadata() const {

@@ -15,9 +15,9 @@ public final class StrawhatOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code strawhat.Protocol}
+   * Protobuf enum {@code strawhat.Transport}
    */
-  public enum Protocol
+  public enum Transport
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <code>Empty = 0;</code>
@@ -62,7 +62,7 @@ public final class StrawhatOuterClass {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static Protocol valueOf(int value) {
+    public static Transport valueOf(int value) {
       return forNumber(value);
     }
 
@@ -70,7 +70,7 @@ public final class StrawhatOuterClass {
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static Protocol forNumber(int value) {
+    public static Transport forNumber(int value) {
       switch (value) {
         case 0: return Empty;
         case 1: return Tcp;
@@ -79,15 +79,15 @@ public final class StrawhatOuterClass {
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Protocol>
+    public static com.google.protobuf.Internal.EnumLiteMap<Transport>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        Protocol> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Protocol>() {
-            public Protocol findValueByNumber(int number) {
-              return Protocol.forNumber(number);
+        Transport> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Transport>() {
+            public Transport findValueByNumber(int number) {
+              return Transport.forNumber(number);
             }
           };
 
@@ -108,9 +108,9 @@ public final class StrawhatOuterClass {
       return strawhat.StrawhatOuterClass.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final Protocol[] VALUES = values();
+    private static final Transport[] VALUES = values();
 
-    public static Protocol valueOf(
+    public static Transport valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -124,11 +124,11 @@ public final class StrawhatOuterClass {
 
     private final int value;
 
-    private Protocol(int value) {
+    private Transport(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:strawhat.Protocol)
+    // @@protoc_insertion_point(enum_scope:strawhat.Transport)
   }
 
   public interface StrawhatOrBuilder extends
@@ -148,15 +148,15 @@ public final class StrawhatOuterClass {
         getServiceIDBytes();
 
     /**
-     * <code>.strawhat.Protocol protocol = 2;</code>
-     * @return The enum numeric value on the wire for protocol.
+     * <code>.strawhat.Transport transport = 2;</code>
+     * @return The enum numeric value on the wire for transport.
      */
-    int getProtocolValue();
+    int getTransportValue();
     /**
-     * <code>.strawhat.Protocol protocol = 2;</code>
-     * @return The protocol.
+     * <code>.strawhat.Transport transport = 2;</code>
+     * @return The transport.
      */
-    strawhat.StrawhatOuterClass.Protocol getProtocol();
+    strawhat.StrawhatOuterClass.Transport getTransport();
   }
   /**
    * Protobuf type {@code strawhat.Strawhat}
@@ -172,7 +172,7 @@ public final class StrawhatOuterClass {
     }
     private Strawhat() {
       serviceID_ = "";
-      protocol_ = 0;
+      transport_ = 0;
     }
 
     @java.lang.Override
@@ -214,7 +214,7 @@ public final class StrawhatOuterClass {
             case 16: {
               int rawValue = input.readEnum();
 
-              protocol_ = rawValue;
+              transport_ = rawValue;
               break;
             }
             default: {
@@ -287,23 +287,23 @@ public final class StrawhatOuterClass {
       }
     }
 
-    public static final int PROTOCOL_FIELD_NUMBER = 2;
-    private int protocol_;
+    public static final int TRANSPORT_FIELD_NUMBER = 2;
+    private int transport_;
     /**
-     * <code>.strawhat.Protocol protocol = 2;</code>
-     * @return The enum numeric value on the wire for protocol.
+     * <code>.strawhat.Transport transport = 2;</code>
+     * @return The enum numeric value on the wire for transport.
      */
-    @java.lang.Override public int getProtocolValue() {
-      return protocol_;
+    @java.lang.Override public int getTransportValue() {
+      return transport_;
     }
     /**
-     * <code>.strawhat.Protocol protocol = 2;</code>
-     * @return The protocol.
+     * <code>.strawhat.Transport transport = 2;</code>
+     * @return The transport.
      */
-    @java.lang.Override public strawhat.StrawhatOuterClass.Protocol getProtocol() {
+    @java.lang.Override public strawhat.StrawhatOuterClass.Transport getTransport() {
       @SuppressWarnings("deprecation")
-      strawhat.StrawhatOuterClass.Protocol result = strawhat.StrawhatOuterClass.Protocol.valueOf(protocol_);
-      return result == null ? strawhat.StrawhatOuterClass.Protocol.UNRECOGNIZED : result;
+      strawhat.StrawhatOuterClass.Transport result = strawhat.StrawhatOuterClass.Transport.valueOf(transport_);
+      return result == null ? strawhat.StrawhatOuterClass.Transport.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -323,8 +323,8 @@ public final class StrawhatOuterClass {
       if (!getServiceIDBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceID_);
       }
-      if (protocol_ != strawhat.StrawhatOuterClass.Protocol.Empty.getNumber()) {
-        output.writeEnum(2, protocol_);
+      if (transport_ != strawhat.StrawhatOuterClass.Transport.Empty.getNumber()) {
+        output.writeEnum(2, transport_);
       }
       unknownFields.writeTo(output);
     }
@@ -338,9 +338,9 @@ public final class StrawhatOuterClass {
       if (!getServiceIDBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceID_);
       }
-      if (protocol_ != strawhat.StrawhatOuterClass.Protocol.Empty.getNumber()) {
+      if (transport_ != strawhat.StrawhatOuterClass.Transport.Empty.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, protocol_);
+          .computeEnumSize(2, transport_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -359,7 +359,7 @@ public final class StrawhatOuterClass {
 
       if (!getServiceID()
           .equals(other.getServiceID())) return false;
-      if (protocol_ != other.protocol_) return false;
+      if (transport_ != other.transport_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -373,8 +373,8 @@ public final class StrawhatOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVICEID_FIELD_NUMBER;
       hash = (53 * hash) + getServiceID().hashCode();
-      hash = (37 * hash) + PROTOCOL_FIELD_NUMBER;
-      hash = (53 * hash) + protocol_;
+      hash = (37 * hash) + TRANSPORT_FIELD_NUMBER;
+      hash = (53 * hash) + transport_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -510,7 +510,7 @@ public final class StrawhatOuterClass {
         super.clear();
         serviceID_ = "";
 
-        protocol_ = 0;
+        transport_ = 0;
 
         return this;
       }
@@ -539,7 +539,7 @@ public final class StrawhatOuterClass {
       public strawhat.StrawhatOuterClass.Strawhat buildPartial() {
         strawhat.StrawhatOuterClass.Strawhat result = new strawhat.StrawhatOuterClass.Strawhat(this);
         result.serviceID_ = serviceID_;
-        result.protocol_ = protocol_;
+        result.transport_ = transport_;
         onBuilt();
         return result;
       }
@@ -592,8 +592,8 @@ public final class StrawhatOuterClass {
           serviceID_ = other.serviceID_;
           onChanged();
         }
-        if (other.protocol_ != 0) {
-          setProtocolValue(other.getProtocolValue());
+        if (other.transport_ != 0) {
+          setTransportValue(other.getTransportValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -700,56 +700,56 @@ public final class StrawhatOuterClass {
         return this;
       }
 
-      private int protocol_ = 0;
+      private int transport_ = 0;
       /**
-       * <code>.strawhat.Protocol protocol = 2;</code>
-       * @return The enum numeric value on the wire for protocol.
+       * <code>.strawhat.Transport transport = 2;</code>
+       * @return The enum numeric value on the wire for transport.
        */
-      @java.lang.Override public int getProtocolValue() {
-        return protocol_;
+      @java.lang.Override public int getTransportValue() {
+        return transport_;
       }
       /**
-       * <code>.strawhat.Protocol protocol = 2;</code>
-       * @param value The enum numeric value on the wire for protocol to set.
+       * <code>.strawhat.Transport transport = 2;</code>
+       * @param value The enum numeric value on the wire for transport to set.
        * @return This builder for chaining.
        */
-      public Builder setProtocolValue(int value) {
+      public Builder setTransportValue(int value) {
         
-        protocol_ = value;
+        transport_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.strawhat.Protocol protocol = 2;</code>
-       * @return The protocol.
+       * <code>.strawhat.Transport transport = 2;</code>
+       * @return The transport.
        */
       @java.lang.Override
-      public strawhat.StrawhatOuterClass.Protocol getProtocol() {
+      public strawhat.StrawhatOuterClass.Transport getTransport() {
         @SuppressWarnings("deprecation")
-        strawhat.StrawhatOuterClass.Protocol result = strawhat.StrawhatOuterClass.Protocol.valueOf(protocol_);
-        return result == null ? strawhat.StrawhatOuterClass.Protocol.UNRECOGNIZED : result;
+        strawhat.StrawhatOuterClass.Transport result = strawhat.StrawhatOuterClass.Transport.valueOf(transport_);
+        return result == null ? strawhat.StrawhatOuterClass.Transport.UNRECOGNIZED : result;
       }
       /**
-       * <code>.strawhat.Protocol protocol = 2;</code>
-       * @param value The protocol to set.
+       * <code>.strawhat.Transport transport = 2;</code>
+       * @param value The transport to set.
        * @return This builder for chaining.
        */
-      public Builder setProtocol(strawhat.StrawhatOuterClass.Protocol value) {
+      public Builder setTransport(strawhat.StrawhatOuterClass.Transport value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        protocol_ = value.getNumber();
+        transport_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.strawhat.Protocol protocol = 2;</code>
+       * <code>.strawhat.Transport transport = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearProtocol() {
+      public Builder clearTransport() {
         
-        protocol_ = 0;
+        transport_ = 0;
         onChanged();
         return this;
       }
@@ -820,10 +820,11 @@ public final class StrawhatOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016strawhat.proto\022\010strawhat\"C\n\010Strawhat\022\021" +
-      "\n\tserviceID\030\001 \001(\t\022$\n\010protocol\030\002 \001(\0162\022.st" +
-      "rawhat.Protocol*\'\n\010Protocol\022\t\n\005Empty\020\000\022\007" +
-      "\n\003Tcp\020\001\022\007\n\003Udp\020\003B\014Z\n./strawhatb\006proto3"
+      "\n\016strawhat.proto\022\010strawhat\"E\n\010Strawhat\022\021" +
+      "\n\tserviceID\030\001 \001(\t\022&\n\ttransport\030\002 \001(\0162\023.s" +
+      "trawhat.Transport*(\n\tTransport\022\t\n\005Empty\020" +
+      "\000\022\007\n\003Tcp\020\001\022\007\n\003Udp\020\003B\014Z\n./strawhatb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -834,7 +835,7 @@ public final class StrawhatOuterClass {
     internal_static_strawhat_Strawhat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_strawhat_Strawhat_descriptor,
-        new java.lang.String[] { "ServiceID", "Protocol", });
+        new java.lang.String[] { "ServiceID", "Transport", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -20,12 +20,12 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\n./strawhat',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0estrawhat.proto\x12\x08strawhat\"C\n\x08Strawhat\x12\x11\n\tserviceID\x18\x01 \x01(\t\x12$\n\x08protocol\x18\x02 \x01(\x0e\x32\x12.strawhat.Protocol*\'\n\x08Protocol\x12\t\n\x05\x45mpty\x10\x00\x12\x07\n\x03Tcp\x10\x01\x12\x07\n\x03Udp\x10\x03\x42\x0cZ\n./strawhatb\x06proto3'
+  serialized_pb=b'\n\x0estrawhat.proto\x12\x08strawhat\"E\n\x08Strawhat\x12\x11\n\tserviceID\x18\x01 \x01(\t\x12&\n\ttransport\x18\x02 \x01(\x0e\x32\x13.strawhat.Transport*(\n\tTransport\x12\t\n\x05\x45mpty\x10\x00\x12\x07\n\x03Tcp\x10\x01\x12\x07\n\x03Udp\x10\x03\x42\x0cZ\n./strawhatb\x06proto3'
 )
 
-_PROTOCOL = _descriptor.EnumDescriptor(
-  name='Protocol',
-  full_name='strawhat.Protocol',
+_TRANSPORT = _descriptor.EnumDescriptor(
+  name='Transport',
+  full_name='strawhat.Transport',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -48,12 +48,12 @@ _PROTOCOL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=97,
-  serialized_end=136,
+  serialized_start=99,
+  serialized_end=139,
 )
-_sym_db.RegisterEnumDescriptor(_PROTOCOL)
+_sym_db.RegisterEnumDescriptor(_TRANSPORT)
 
-Protocol = enum_type_wrapper.EnumTypeWrapper(_PROTOCOL)
+Transport = enum_type_wrapper.EnumTypeWrapper(_TRANSPORT)
 Empty = 0
 Tcp = 1
 Udp = 3
@@ -76,7 +76,7 @@ _STRAWHAT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='protocol', full_name='strawhat.Strawhat.protocol', index=1,
+      name='transport', full_name='strawhat.Strawhat.transport', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -95,12 +95,12 @@ _STRAWHAT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=28,
-  serialized_end=95,
+  serialized_end=97,
 )
 
-_STRAWHAT.fields_by_name['protocol'].enum_type = _PROTOCOL
+_STRAWHAT.fields_by_name['transport'].enum_type = _TRANSPORT
 DESCRIPTOR.message_types_by_name['Strawhat'] = _STRAWHAT
-DESCRIPTOR.enum_types_by_name['Protocol'] = _PROTOCOL
+DESCRIPTOR.enum_types_by_name['Transport'] = _TRANSPORT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Strawhat = _reflection.GeneratedProtocolMessageType('Strawhat', (_message.Message,), {

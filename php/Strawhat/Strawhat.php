@@ -18,9 +18,9 @@ class Strawhat extends \Google\Protobuf\Internal\Message
      */
     protected $serviceID = '';
     /**
-     * Generated from protobuf field <code>.strawhat.Protocol protocol = 2;</code>
+     * Generated from protobuf field <code>.strawhat.Transport transport = 2;</code>
      */
-    protected $protocol = 0;
+    protected $transport = 0;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class Strawhat extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $serviceID
-     *     @type int $protocol
+     *     @type int $transport
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class Strawhat extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.strawhat.Protocol protocol = 2;</code>
+     * Generated from protobuf field <code>.strawhat.Transport transport = 2;</code>
      * @return int
      */
-    public function getProtocol()
+    public function getTransport()
     {
-        return $this->protocol;
+        return $this->transport;
     }
 
     /**
-     * Generated from protobuf field <code>.strawhat.Protocol protocol = 2;</code>
+     * Generated from protobuf field <code>.strawhat.Transport transport = 2;</code>
      * @param int $var
      * @return $this
      */
-    public function setProtocol($var)
+    public function setTransport($var)
     {
-        GPBUtil::checkEnum($var, \Strawhat\Protocol::class);
-        $this->protocol = $var;
+        GPBUtil::checkEnum($var, \Strawhat\Transport::class);
+        $this->transport = $var;
 
         return $this;
     }
